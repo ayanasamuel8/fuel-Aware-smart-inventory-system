@@ -1,0 +1,16 @@
+# Default owner until team GitHub usernames are finalized.
+* @ayanasamuel8
+
+# Shared docs and repo configuration
+/docs/ @ayanasamuel8
+/.github/ @ayanasamuel8
+/README.md @ayanasamuel8
+/CONTRIBUTING.md @ayanasamuel8
+
+# Team areas
+/hardware/ @ayanasamuel8
+/backend/ @ayanasamuel8
+/frontend-web/ @ayanasamuel8
+/mobile/ @ayanasamuel8
+/scripts/ @ayanasamuel8
+

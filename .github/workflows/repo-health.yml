@@ -1,0 +1,23 @@
+name: Repo Health
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  structure-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate required files
+        run: |
+          test -f README.md
+          test -f CONTRIBUTING.md
+          test -f CODEOWNERS
+          test -d docs
+          test -d .github
+

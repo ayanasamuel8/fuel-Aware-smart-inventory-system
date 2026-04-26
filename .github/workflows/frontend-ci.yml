@@ -1,0 +1,52 @@
+name: Frontend CI
+
+on:
+  pull_request:
+    paths:
+      - "frontend-web/**"
+      - ".github/workflows/frontend-ci.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "frontend-web/**"
+      - ".github/workflows/frontend-ci.yml"
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend-web
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        if: ${{ hashFiles('frontend-web/package.json') != '' }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: frontend-web/package-lock.json
+
+      - name: Install dependencies
+        if: ${{ hashFiles('frontend-web/package.json') != '' }}
+        run: npm ci
+
+      - name: Lint
+        if: ${{ hashFiles('frontend-web/package.json') != '' }}
+        run: npm run lint --if-present
+
+      - name: Test
+        if: ${{ hashFiles('frontend-web/package.json') != '' }}
+        run: npm test --if-present
+
+      - name: Build
+        if: ${{ hashFiles('frontend-web/package.json') != '' }}
+        run: npm run build --if-present
+
+      - name: Skip notice
+        if: ${{ hashFiles('frontend-web/package.json') == '' }}
+        run: echo "No frontend-web/package.json yet. Skipping frontend CI."
+

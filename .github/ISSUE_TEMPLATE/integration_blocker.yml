@@ -1,0 +1,39 @@
+name: Integration blocker
+description: Report something preventing parallel progress
+title: "[Blocker] "
+labels:
+  - blocked
+  - integration
+body:
+  - type: input
+    id: blocker
+    attributes:
+      label: Blocker summary
+    validations:
+      required: true
+  - type: dropdown
+    id: blocked_team
+    attributes:
+      label: Blocked team
+      options:
+        - CSE
+        - SE
+        - ECE
+        - Shared
+    validations:
+      required: true
+  - type: textarea
+    id: cause
+    attributes:
+      label: Cause
+      description: What is missing or unclear?
+    validations:
+      required: true
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Temporary workaround
+      description: What mock or fallback can keep progress moving?
+    validations:
+      required: true
+
