@@ -23,7 +23,7 @@ Description:
 
 Acceptance:
 
-- Backend accepts telemetry via a documented endpoint or Supabase-backed ingestion path
+- Backend accepts telemetry through the documented ingestion endpoint; any Supabase usage remains an internal persistence implementation detail behind that endpoint
 - Invalid payloads are rejected clearly
 - Valid payloads appear in storage and dashboard
 
