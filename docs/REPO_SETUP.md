@@ -35,6 +35,7 @@ integrated/
 6. Add CI workflows for backend and frontend
 7. Add `.env.example` files for backend and frontend
 8. Add simulator script early
+9. Create the initial Supabase project and shared table schema
 
 ## Recommended Initial Branches
 
@@ -59,6 +60,7 @@ Good:
 - `LICENSE` if required by team
 - backend `.env.example`
 - frontend `.env.example`
+- Supabase schema migration or SQL bootstrap file
 - PR template
 - issue templates if time allows
 
@@ -78,4 +80,4 @@ Good:
 - liters as fuel unit
 - kilometers as distance unit
 - same vehicle and device ID format everywhere
-
+- Supabase credentials stored only in environment variables

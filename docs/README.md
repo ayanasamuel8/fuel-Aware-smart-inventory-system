@@ -40,6 +40,8 @@ The MVP is complete when the team can demonstrate:
 - Trip and fuel event history visible in UI
 - Team can demo the system for one vehicle reliably
 
+The documentation set assumes Supabase as the shared database and real-time service unless a specific document says otherwise.
+
 ## Stretch Features
 
 Only start stretch features after the MVP passes integration testing:
@@ -57,4 +59,3 @@ Only start stretch features after the MVP passes integration testing:
 - If a contract changes, update the docs in the same PR.
 - If a feature cannot be finished fully, ship the smallest demonstrable vertical slice.
 - Prefer simple, observable behavior over hidden complexity.
-

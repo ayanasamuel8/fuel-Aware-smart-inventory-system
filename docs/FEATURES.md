@@ -23,7 +23,7 @@ Description:
 
 Acceptance:
 
-- Backend accepts telemetry via a documented endpoint or Firebase path
+- Backend accepts telemetry via a documented endpoint or Supabase-backed ingestion path
 - Invalid payloads are rejected clearly
 - Valid payloads appear in storage and dashboard
 
@@ -344,7 +344,7 @@ Ownership:
 ### CSE-P0
 
 - Backend service skeleton
-- Ingestion API or Firebase listener
+- Ingestion API or Supabase ingestion flow
 - Payload validation
 - Telemetry persistence
 - Alert rule engine
@@ -364,7 +364,7 @@ Ownership:
 
 - API docs
 - Environment variable template
-- Database schema or collection spec
+- Database schema or table spec
 - Postman/Bruno collection if used
 - Rule thresholds configuration
 
@@ -415,4 +415,3 @@ The approved MVP scope is:
 - Basic rule-based analytics
 
 Everything else is secondary until this works end to end.
-

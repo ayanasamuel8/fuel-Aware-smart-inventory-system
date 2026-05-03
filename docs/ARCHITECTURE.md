@@ -38,7 +38,7 @@ Device Layer
         |
         v
 Ingestion Layer
-  HTTP endpoint and/or Firebase write path
+  HTTP endpoint and/or Supabase write path
         |
         v
 Core Backend Layer
@@ -68,7 +68,7 @@ Frontend Layer
 
 For the 3-week deadline, the simplest architecture is:
 
-- Firebase as shared real-time data layer
+- Supabase as shared database and real-time data layer
 - Node.js backend for validation, rules, and API aggregation
 - Python analytics as a separate script or service called asynchronously
 - React dashboard as main presentation layer
@@ -77,9 +77,10 @@ For the 3-week deadline, the simplest architecture is:
 Reason:
 
 - Fast setup
-- Easy real-time updates
+- Managed Postgres plus real-time subscriptions
 - Lower integration overhead
 - Works with both simulator and hardware
+- Clear SQL schema for analytics and reporting
 
 ## Logical Modules
 
@@ -202,7 +203,7 @@ Owned by:
 
 ## Storage Strategy
 
-Use separated logical collections/tables:
+Use separated logical tables:
 
 - `vehicles`
 - `devices`
@@ -247,9 +248,9 @@ Prototype-level resilience should include:
 
 Recommended prototype environments:
 
-- Frontend: Vercel, Netlify, or Firebase Hosting
+- Frontend: Vercel, Netlify, or another static host
 - Backend: Render, Railway, or local demo server
-- Database/realtime: Firebase
+- Database/realtime: Supabase
 - Analytics: local job, cron, or callable backend hook
 
 ## Architecture Constraints
@@ -276,4 +277,3 @@ Instead:
 - SE builds on mock contracts
 
 That is the core architecture principle for this project.
-

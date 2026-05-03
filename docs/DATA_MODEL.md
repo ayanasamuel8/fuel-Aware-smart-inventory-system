@@ -4,7 +4,12 @@
 
 Provide a simple shared model for backend, analytics, and frontend.
 
-## Collections or Tables
+## Tables
+
+Recommended storage target:
+
+- Supabase Postgres for canonical tables
+- Supabase Realtime subscriptions for latest-state and alert updates if needed by the dashboard
 
 ## `vehicles`
 
@@ -145,4 +150,3 @@ Fields:
 ## MVP Data Rule
 
 If a field is not essential for MVP behavior, do not block implementation waiting for it.
-
