@@ -63,9 +63,8 @@ Always prepare B and C even if A is available.
 
 Prepare answers for:
 
-- why Firebase was chosen
+- why Supabase was chosen
 - why simulator was necessary
 - how theft detection works
 - how the system scales beyond one vehicle
 - what each department contributed
-

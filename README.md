@@ -9,6 +9,7 @@ This repository contains the full project workspace for the Fuel-Aware Smart Inv
 - backend services
 - frontend web application
 - mobile application
+- Supabase-backed data layer planning
 - CI/CD and collaboration rules
 
 ## Project Goal
@@ -73,6 +74,8 @@ The MVP is complete when the team can demonstrate:
 - dashboard and history views
 - one end-to-end single-vehicle prototype
 
+The current project documentation assumes Supabase for the shared database and real-time layer.
+
 ## Core Rules
 
 - keep PRs small
@@ -99,4 +102,3 @@ Before contributing, read:
 
 - [CONTRIBUTING.md](./CONTRIBUTING.md)
 - [docs/WORKFLOW.md](./docs/WORKFLOW.md)
-

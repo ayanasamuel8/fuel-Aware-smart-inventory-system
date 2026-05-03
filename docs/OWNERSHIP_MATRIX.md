@@ -32,7 +32,7 @@ ECE must provide to other teams:
 
 CSE must provide to other teams:
 
-- stable endpoints or Firebase paths
+- stable endpoints or Supabase write/query paths
 - sample request/response bodies
 - error format
 - seeded development data
@@ -104,4 +104,3 @@ Every task must have:
 - one primary owner
 - optional reviewers/supporters
 - a clear output
-
