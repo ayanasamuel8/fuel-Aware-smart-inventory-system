@@ -38,7 +38,7 @@ Device Layer
         |
         v
 Ingestion Layer
-  HTTP endpoint and/or Supabase write path
+  Backend HTTP telemetry endpoint (POST /api/telemetry)
         |
         v
 Core Backend Layer
