@@ -32,7 +32,7 @@ ECE must provide to other teams:
 
 CSE must provide to other teams:
 
-- stable endpoints or Supabase write/query paths
+- stable backend endpoints
 - sample request/response bodies
 - error format
 - seeded development data

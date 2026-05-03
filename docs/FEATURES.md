@@ -23,7 +23,7 @@ Description:
 
 Acceptance:
 
-- Backend accepts telemetry through the documented ingestion endpoint; any Supabase usage remains an internal persistence implementation detail behind that endpoint
+- Backend accepts telemetry through the documented ingestion endpoint; any Supabase usage remains an internal persistence detail behind that endpoint
 - Invalid payloads are rejected clearly
 - Valid payloads appear in storage and dashboard
 
@@ -344,7 +344,7 @@ Ownership:
 ### CSE-P0
 
 - Backend service skeleton
-- Ingestion API or Supabase ingestion flow
+- Telemetry ingestion API
 - Payload validation
 - Telemetry persistence
 - Alert rule engine

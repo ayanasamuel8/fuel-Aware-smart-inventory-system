@@ -81,6 +81,7 @@ Reason:
 - Lower integration overhead
 - Works with both simulator and hardware
 - Clear SQL schema for analytics and reporting
+- Preserves a single validated ingestion contract for devices and simulators
 
 ## Logical Modules
 
