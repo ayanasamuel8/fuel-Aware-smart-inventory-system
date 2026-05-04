@@ -4,17 +4,41 @@ from typing import Iterator
 from psycopg import Connection
 from psycopg.rows import dict_row
 from psycopg.sql import Identifier, SQL
+from psycopg_pool import ConnectionPool
 
 from analytics.config import settings
+
+_connection_pool: ConnectionPool | None = None
+
+
+def init_connection_pool() -> None:
+    global _connection_pool
+
+    if _connection_pool is None:
+        _connection_pool = ConnectionPool(
+            conninfo=settings.supabase_db_url,
+            kwargs={"row_factory": dict_row},
+            open=False,
+        )
+
+    if _connection_pool.closed:
+        _connection_pool.open()
+
+
+def close_connection_pool() -> None:
+    if _connection_pool is not None and not _connection_pool.closed:
+        _connection_pool.close()
 
 
 @contextmanager
 def get_connection() -> Iterator[Connection]:
-    conn = Connection.connect(settings.supabase_db_url, row_factory=dict_row)
-    try:
+    if _connection_pool is None or _connection_pool.closed:
+        init_connection_pool()
+
+    assert _connection_pool is not None
+
+    with _connection_pool.connection() as conn:
         yield conn
-    finally:
-        conn.close()
 
 
 def fetch_telemetry_sample(limit: int) -> list[dict]:
